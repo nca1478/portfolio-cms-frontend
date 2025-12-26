@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: 'res.cloudinary.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'portfolio-cms-backend-ixh2.onrender.com',
+        pathname: '/uploads/**',
+      },
     ],
   },
 };
