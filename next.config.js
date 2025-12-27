@@ -1,26 +1,20 @@
+const { createCMSImageConfig } = require('./src/lib/utils/cms-config');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3001',
-        pathname: '/uploads/**',
-      },
+      // Configuración dinámica para CMS
+      createCMSImageConfig(),
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+        pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'portfolio-cms-backend-ixh2.onrender.com',
-        pathname: '/uploads/**',
       },
     ],
   },
